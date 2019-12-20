@@ -3,69 +3,59 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pvan-ren <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pvan-ren <pvan-ren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/30 11:09:40 by pvan-ren          #+#    #+#             */
-/*   Updated: 2018/08/30 12:52:48 by pvan-ren         ###   ########.fr       */
+/*   Updated: 2019/12/17 09:38:27 by pvan-ren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	count_splits(char const *s, char c)
+static int	ft_words(char const *s, char c)
 {
-	size_t	i;
+	int		words;
+	int		i;
 
+	words = 0;
 	i = 0;
-	while (*s == c)
-		s++;
-	while (*s)
+	while (s[i] != '\0')
 	{
-		while (*s != c)
-			s++;
-		while (*s == c)
-			s++;
-		i++;
+		while (s[i] == c && s[i] != '\0')
+			i++;
+		if (s[i] != c && s[i])
+			words++;
+		while (s[i] != c && s[i] != '\0')
+			i++;
 	}
-	return (i);
+	return (words);
 }
 
-static size_t	split_len(char const *s, char c)
+char		**ft_strsplit(char const *s, char c)
 {
-	size_t	len;
+	char	**arr;
+	int		i;
+	int		j;
+	int		k;
 
-	len = 0;
-	while (*s == c)
-		s++;
-	while (*s && *s++ != c)
-		len++;
-	return (len);
-}
-
-char			**ft_strsplit(char const *s, char c)
-{
-	size_t	i;
-	size_t	len;
-	char	**splits;
-
-	if (!s)
-		return (NULL);
 	i = 0;
-	if (!(splits = (char**)ft_memalloc(sizeof(splits) *
-		(count_splits(s, c) + 1))))
+	if (s == NULL)
 		return (NULL);
-	while (*s == c)
-		s++;
-	while (*s)
+	k = ft_words(s, c);
+	arr = (char **)malloc(sizeof(char *) * (k + 1));
+	if (!arr)
+		return (NULL);
+	k = 0;
+	while (s[i] != '\0')
 	{
-		len = split_len(s, c);
-		if (!(splits[i] = ft_strnew(len)))
-			return (NULL);
-		ft_strncpy(splits[i++], s, len);
-		while (*s && *s != c)
-			s++;
-		while (*s == c)
-			s++;
+		j = 0;
+		while (s[i] == c && s[i] != '\0')
+			i++;
+		while (s[i] != c && s[i] != '\0' && ++j)
+			i++;
+		if (s[i - 1] != c)
+			arr[k++] = ft_strsub(s, i - j, j);
 	}
-	return (splits);
+	arr[k] = NULL;
+	return (arr);
 }
