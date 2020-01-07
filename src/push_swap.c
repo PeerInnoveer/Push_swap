@@ -6,11 +6,11 @@
 /*   By: pvan-ren <pvan-ren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/12 13:34:08 by pvan-ren          #+#    #+#             */
-/*   Updated: 2019/12/13 12:16:15 by pvan-ren         ###   ########.fr       */
+/*   Updated: 2020/01/07 13:34:44 by pvan-ren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "../include/header.h"
 
 int		main(int ac, char **av)
 {

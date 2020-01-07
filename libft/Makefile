@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+         #
+#    By: pvan-ren <pvan-ren@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/29 16:05:24 by cfatrane          #+#    #+#              #
-#*   Updated: 2017/02/14 13:02:09 by cfatrane         ###   ########.fr       *#
+#    Updated: 2020/01/07 09:23:40 by pvan-ren         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -102,7 +102,7 @@ CFLAGS = -Wall -Wextra -Werror
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@echo "\x1B[34mCreating libft.a$(NAME)...\033[0m"
+	@echo "\x1B[34mCreating $(NAME)...\033[0m"
 	@ar rc $(NAME) $(OBJ)
 	@ranlib $(NAME)
 	@echo "\033[32m$(NAME) Created\033[0m"

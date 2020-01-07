@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pvan-ren <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pvan-ren <pvan-ren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/12 12:40:50 by pvan-ren          #+#    #+#             */
-/*   Updated: 2018/09/25 13:46:39 by pvan-ren         ###   ########.fr       */
+/*   Updated: 2020/01/07 13:33:07 by pvan-ren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "../include/header.h"
 
 void	ft_print_tab(t_data *data)
 {

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pvan-ren <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pvan-ren <pvan-ren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/12 13:35:21 by pvan-ren          #+#    #+#             */
-/*   Updated: 2018/09/26 12:10:45 by pvan-ren         ###   ########.fr       */
+/*   Updated: 2020/01/07 13:34:48 by pvan-ren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "../include/header.h"
 
 int		sort(t_data *data)
 {

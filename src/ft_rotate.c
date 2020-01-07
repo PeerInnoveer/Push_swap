@@ -6,11 +6,11 @@
 /*   By: pvan-ren <pvan-ren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/12 12:40:38 by pvan-ren          #+#    #+#             */
-/*   Updated: 2019/12/13 12:12:09 by pvan-ren         ###   ########.fr       */
+/*   Updated: 2020/01/07 13:34:01 by pvan-ren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "../include/header.h"
 
 int		ft_ra(t_data *data)
 {

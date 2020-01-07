@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pvan-ren <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: pvan-ren <pvan-ren@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/12 14:07:50 by pvan-ren          #+#    #+#              #
-#    Updated: 2018/09/26 13:08:17 by pvan-ren         ###   ########.fr        #
+#    Updated: 2020/01/07 12:32:33 by pvan-ren         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,7 @@ CC			= gcc $(CFLAGS)
 CFLAGS		= -Wall -Wextra -Werror
 
 # Rules
-all: $(NAME)
+all: $(NAME) 
 
 $(NAME): $(OBJ) $(INC_PATH)
 	@make -C./libft/
