@@ -6,7 +6,7 @@
 /*   By: pvan-ren <pvan-ren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/12 12:40:50 by pvan-ren          #+#    #+#             */
-/*   Updated: 2020/01/07 13:33:07 by pvan-ren         ###   ########.fr       */
+/*   Updated: 2020/01/13 12:46:16 by pvan-ren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,27 +53,27 @@ int		ft_sort_is_ok(t_data *data)
 	return (0);
 }
 
-int		ft_sort_b_is_ok(t_data *data)
-{
-	int	i;
+// int		ft_sort_b_is_ok(t_data *data)
+// {
+// 	int	i;
 
-	i = data->size_b - 1;
-	while (i > 0)
-	{
-		if (data->stack_b[i - 1] > data->stack_b[i])
-			i--;
-		else
-			return (-1);
-	}
-	return (0);
-}
+// 	i = data->size_b - 1;
+// 	while (i > 0)
+// 	{
+// 		if (data->stack_b[i - 1] > data->stack_b[i])
+// 			i--;
+// 		else
+// 			return (-1);
+// 	}
+// 	return (0);
+// }
 
-void	ft_sort_b(t_data *data)
-{
-	if (data->size_b == 1)
-		return ;
-	if (data->stack_b[data->size_b] && data->stack_b[0] < data->stack_b[data->size_b - 1])
-		ft_rb(data);
-	else if (data->stack_b[1] && data->stack_b[0] < data->stack_b[1])
-		ft_sb(data);
-}
+// void	ft_sort_b(t_data *data)
+// {
+// 	if (data->size_b == 1)
+// 		return ;
+// 	if (data->stack_b[data->size_b] && data->stack_b[0] < data->stack_b[data->size_b - 1])
+// 		ft_rb(data);
+// 	else if (data->stack_b[1] && data->stack_b[0] < data->stack_b[1])
+// 		ft_sb(data);
+// }
