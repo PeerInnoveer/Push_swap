@@ -6,7 +6,7 @@
 #    By: pvan-ren <pvan-ren@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/29 16:05:24 by cfatrane          #+#    #+#              #
-#    Updated: 2020/01/07 09:23:40 by pvan-ren         ###   ########.fr        #
+#    Updated: 2020/01/15 14:45:27 by pvan-ren         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,7 @@ SRC_NAME = ft_lstadd.c \
 			ft_isdigit.c \
 			ft_isalnum.c \
 			ft_isascii.c \
+			ft_isspace.c \
 			ft_memcmp.c \
 			ft_isprint.c \
 			ft_toupper.c \

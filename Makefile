@@ -6,74 +6,75 @@
 #    By: pvan-ren <pvan-ren@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/12 14:07:50 by pvan-ren          #+#    #+#              #
-#    Updated: 2020/01/07 12:32:33 by pvan-ren         ###   ########.fr        #
+#    Updated: 2020/01/22 12:30:25 by pvan-ren         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= push_swap
+CHKR = checker
+PS = push_swap
 
-# Path
-SRC_PATH	= ./src/
-INC_PATH	= ./include/
-OBJ_PATH	= ./bin/
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror
+INC = -I ./include/
+LIBFT = ./libft/libft.a
 
-# Name
-SRC_NAME	= push_swap.c \
-			  ft_make_stacks.c \
-			  ft_sort.c \
-			  ft_string_is_nb.c \
-			  ft_push.c \
-			  ft_rotate.c \
-			  ft_swap.c \
-			  sort.c \
+CH_SRCS = ./src/checker.c \
+			./src/error_check.c \
+			./src/make_stacks.c \
+			./src/push.c \
+			./src/rotate.c \
+			./src/sort.c \
+			./src/string_is_nb.c \
+			./src/swap.c \
 
-OBJ_NAME	= $(SRC_NAME:.c=.o)
+PS_SRCS = ./src/error_check.c \
+			./src/make_stacks.c \
+			./src/push.c \
+			./src/rotate.c \
+			./src/sort.c \
+			./src/string_is_nb.c \
+			./src/swap.c \
+			./src/push_swap.c \
+			./src/sortAlgo.c
 
-# Files
-SRC		= $(addprefix $(SRC_PATH)/, $(SRC_NAME))
-OBJ		= $(addprefix $(OBJ_PATH)/, $(OBJ_NAME))
+RM = rm -rf
+NORM = norminette
 
-# Flags
-LDFLAGS		= -L./libft/
-LFT			= -lft
-CC			= gcc $(CFLAGS)
-#-fsanitize=address
-CFLAGS		= -Wall -Wextra -Werror
+all: $(LIBFT)
+	@$(CC) -o $(CHKR) $(CH_SRCS) $(CFLAGS) $(INC) $(LIBFT)
+	@$(CC) -o $(PS) $(PS_SRCS) $(CFLAGS) $(INC) $(LIBFT)
+	@echo "\033[32m[Compiled]\033[0m"
 
-# Rules
-all: $(NAME) 
+checker: clean_chkr	
+	@$(RM) $(CHKR)
+	@$(CC) -o $(CHKR) $(CH_SRCS) $(CFLAGS) $(INC) $(LIBFT)
+	@echo "\033[32m[Compiled Checker]\033[0m"
 
-$(NAME): $(OBJ) $(INC_PATH)
-	@make -C./libft/
-	@echo "\033[34mCreating $(NAME)...\033[0m"
-	@$(CC) $(LDFLAGS) $(LFT) $(OBJ) -o $@
-	@echo "\033[32m$(NAME) created\033[0m"
+push_swap: clean_ps
+	@$(CC) -o $(PS) $(PS_SRCS) $(CFLAGS) $(INC) $(LIBFT)
+	@echo "\033[32m[Compiled Push_Swap]\033[0m"
 
-$(OBJ_PATH)%.o: $(SRC_PATH)%.c
-	@mkdir $(OBJ_PATH) 2> /dev/null || true
-	@$(CC) -I$(INC_PATH) -o $@ -c $<
+clean_chkr:
+	@$(RM) $(CHKR)
 
-clean: cleanlib
-	@echo "\033[33mRemoving $(NAME)  .o files ...\033[0m"
-	@rm -f $(OBJ)
-	@rmdir $(OBJ_PATH)  2> /dev/null || true
-	@echo "\033[31mFiles .o deleted\033[0m"
+clean_ps:
+	@$(RM) $(PS)
 
-cleanlib:
+norm:
+	@$(NORM) ./includes/ ./libft/srcs/*.c ./libft/includes/ ./srcs/*.c
+
+$(LIBFT):
+	@make re -C ./libft/
+	@echo "\033[32m[Compiled Libft]\033[0m"
+
+clean:
 	@make clean -C ./libft/
+	@$(RM) $(CHKR)
+	@$(RM) $(PS)
+	@echo "\033[31m[Cleaned]\033[0m"
 
-fclean: clean fcleanlib
-	@echo "\033[33mRemoving $(NAME) ...\033[0m"
-	@rm -f $(NAME)
-	@echo "\033[31mBinary $(NAME) deleted\033[0m"
-
-fcleanlib:
+fclean: clean
 	@make fclean -C ./libft/
+	@echo "\033[031m[Cleaned]\033[0m"
 
 re: fclean all
-
-norme:
-	norminette $(SRC)
-	norminette $(INC_PATH)*.ih
-
-.PHONY : all clean fclean re

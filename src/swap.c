@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pvan-ren <pvan-ren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/12 12:41:06 by pvan-ren          #+#    #+#             */
-/*   Updated: 2020/01/07 13:34:41 by pvan-ren         ###   ########.fr       */
+/*   Updated: 2020/01/22 13:36:29 by pvan-ren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/header.h"
+#include "../include/pushswap.h"
 
-int		ft_sa(t_data *data)
+int		sa(t_data *data)
 {
 	int		tmp;
 
@@ -21,11 +21,10 @@ int		ft_sa(t_data *data)
 	tmp = data->stack_a[0];
 	data->stack_a[0] = data->stack_a[1];
 	data->stack_a[1] = tmp;
-	ft_print_name(data, "sa\n");
 	return (0);
 }
 
-int		ft_sb(t_data *data)
+int		sb(t_data *data)
 {
 	int		tmp;
 
@@ -34,14 +33,12 @@ int		ft_sb(t_data *data)
 	tmp = data->stack_b[0];
 	data->stack_b[0] = data->stack_b[1];
 	data->stack_b[1] = tmp;
-	ft_print_name(data, "sb\n");
 	return (0);
 }
 
-int		ft_ss(t_data *data)
+int		ss(t_data *data)
 {
-	ft_sa(data);
-	ft_sb(data);
-	ft_print_name(data, "ss\n");
+	sa(data);
+	sb(data);
 	return (0);
 }

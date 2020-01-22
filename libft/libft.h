@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pvan-ren <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pvan-ren <pvan-ren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/19 14:09:58 by pvan-ren          #+#    #+#             */
-/*   Updated: 2018/09/20 12:48:30 by pvan-ren         ###   ########.fr       */
+/*   Updated: 2020/01/15 14:45:08 by pvan-ren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ int				ft_isalpha(int c);
 int				ft_isdigit(int c);
 int				ft_isalnum(int c);
 int				ft_isascii(int c);
+int				ft_isspace(int c);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
 int				ft_isprint(int c);
 int				ft_toupper(int c);

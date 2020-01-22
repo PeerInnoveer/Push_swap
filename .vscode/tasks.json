@@ -1,0 +1,12 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build_checker",
+            "type": "shell",
+            "command": "cd src && gcc -o checker -g checker.c ../libft/libft.a ft_make_stacks.c ft_push.c ft_rotate.c ft_sort.c ft_swap.c ft_string_is_nb.c error_check.c"
+        }
+    ]
+}

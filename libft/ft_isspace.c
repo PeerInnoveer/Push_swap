@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_string_is_nb.c                                  :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pvan-ren <pvan-ren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/12 13:34:42 by pvan-ren          #+#    #+#             */
-/*   Updated: 2020/01/07 13:34:30 by pvan-ren         ###   ########.fr       */
+/*   Created: 2020/01/15 14:44:21 by pvan-ren          #+#    #+#             */
+/*   Updated: 2020/01/15 14:44:37 by pvan-ren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/header.h"
+#include "libft.h"
 
-int		ft_string_is_nb(char *str)
+int		ft_isspace(int c)
 {
-	int	i;
-	i = 0;
-
-	if (str[0] == '-' && str[1])
-		i++;
-	while (str[i] != 0)
-	{
-		if (!ft_isdigit(str[i]))
-			return (-1);
-		i++;
-	}
+	c = (unsigned char)c;
+	if (c == ' ' || c == '\t' || c == '\n' || c == '\v' ||
+			c == '\f' || c == '\r')
+		return (1);
 	return (0);
 }

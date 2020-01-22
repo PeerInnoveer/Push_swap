@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_make_stacks.c                                   :+:      :+:    :+:   */
+/*   make_stacks.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pvan-ren <pvan-ren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/12 13:36:25 by pvan-ren          #+#    #+#             */
-/*   Updated: 2019/12/19 12:14:17 by pvan-ren         ###   ########.fr       */
+/*   Updated: 2020/01/22 12:39:24 by pvan-ren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // #include "header.h"
-#include "../include/header.h"
+#include "../include/pushswap.h"
 
-int		ft_make_stacks(t_data *data, char **av)
+int		make_stacks(t_data *data, char **av)
 {
 	int	size;
 

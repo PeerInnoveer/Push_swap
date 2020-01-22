@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_push.c                                          :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pvan-ren <pvan-ren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/12 12:40:04 by pvan-ren          #+#    #+#             */
-/*   Updated: 2020/01/14 15:15:02 by pvan-ren         ###   ########.fr       */
+/*   Updated: 2020/01/22 12:39:37 by pvan-ren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/header.h"
+#include "../include/pushswap.h"
 
-int		ft_pa(t_data *data)
+int		pa(t_data *data)
 {
 	int		i;
-	int		tmp2;
 
 	data->size_b--;
 	data->size_a++;
@@ -32,16 +31,13 @@ int		ft_pa(t_data *data)
 		data->stack_b[i] = data->stack_b[i + 1];
 		i++;
 	}
-	ft_print_name(data, "pa\n");
 	return (0);
 }
 
-int		ft_pb(t_data *data)
+int		pb(t_data *data)
 {
 	int		i;
-	int		tmp2;
 
-	// tmp2 = data->stack_b[data->size_a - 1];
 	data->size_a--;
 	data->size_b++;
 	i = data->size_b - 1;
@@ -50,7 +46,6 @@ int		ft_pb(t_data *data)
 		data->stack_b[i] = data->stack_b[i - 1];
 		i--;
 	}
-	data->stack_b[data->size_b] = tmp2;
 	data->stack_b[0] = data->stack_a[0];
 	i = 0;
 	while (i < data->size_a)
@@ -58,6 +53,5 @@ int		ft_pb(t_data *data)
 		data->stack_a[i] = data->stack_a[i + 1];
 		i++;
 	}
-	ft_print_name(data, "pb\n");
 	return (0);
 }
