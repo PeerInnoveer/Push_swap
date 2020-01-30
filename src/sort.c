@@ -6,7 +6,7 @@
 /*   By: pvan-ren <pvan-ren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/12 12:40:50 by pvan-ren          #+#    #+#             */
-/*   Updated: 2020/01/22 12:39:49 by pvan-ren         ###   ########.fr       */
+/*   Updated: 2020/01/30 09:53:39 by pvan-ren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	print_tab(t_data *data)
 	}
 	ft_putchar('\n');
 	i = 0;
-	ft_putstr("stack_b : ");
+	ft_putstr("stack_b : "); 
 	while (i < data->size_b)
 	{
 		ft_putnbr(data->stack_b[i]);
@@ -41,7 +41,7 @@ int		sort_is_ok(t_data *data)
 	int	i;
 
 	i = data->size_a - 1;
-	while (i >= 0)
+	while (i > 0)
 	{
 		if (data->stack_a[i - 1] < data->stack_a[i])
 			i--;
