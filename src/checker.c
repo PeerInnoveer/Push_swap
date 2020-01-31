@@ -6,7 +6,7 @@
 /*   By: pvan-ren <pvan-ren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/12 15:43:50 by pvan-ren          #+#    #+#             */
-/*   Updated: 2020/01/23 15:05:49 by pvan-ren         ###   ########.fr       */
+/*   Updated: 2020/01/30 13:06:29 by pvan-ren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,26 +39,28 @@ int		main(int ac, char **av)
 	{
 		if (ft_strcmp(line, "sa") == 0)
 			sa(&data);
-		if (ft_strcmp(line, "sb") == 0)
+		else if (ft_strcmp(line, "sb") == 0)
 			sb(&data);
-		if (ft_strcmp(line, "ss") == 0)
+		else if (ft_strcmp(line, "ss") == 0)
 			ss(&data);
-		if (ft_strcmp(line, "pa") == 0)
+		else if (ft_strcmp(line, "pa") == 0)
 			pa(&data);
-		if (ft_strcmp(line, "pb") == 0)
+		else if (ft_strcmp(line, "pb") == 0)
 			pb(&data);
-		if (ft_strcmp(line, "ra") == 0)
+		else if (ft_strcmp(line, "ra") == 0)
 			ra(&data);
-		if (ft_strcmp(line, "rb") == 0)
+		else if (ft_strcmp(line, "rb") == 0)
 			rb(&data);
-		if (ft_strcmp(line, "rr") == 0)
+		else if (ft_strcmp(line, "rr") == 0)
 			rr(&data);
-		if (ft_strcmp(line, "rra") == 0)
+		else if (ft_strcmp(line, "rra") == 0)
 			rra(&data);
-		if (ft_strcmp(line, "rrb") == 0)
+		else if (ft_strcmp(line, "rrb") == 0)
 			rrb(&data);
 		else if (ft_strcmp(line, "rrr") == 0)
 			rrr(&data);
+		else
+			ft_putstr("Error\n");
 		i = 0;
 		while (args[i])	{
 			i++;
