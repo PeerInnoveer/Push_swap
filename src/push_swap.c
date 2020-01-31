@@ -6,7 +6,7 @@
 /*   By: pvan-ren <pvan-ren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/12 13:34:08 by pvan-ren          #+#    #+#             */
-/*   Updated: 2020/01/22 12:39:30 by pvan-ren         ###   ########.fr       */
+/*   Updated: 2020/01/31 14:57:21 by pvan-ren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,24 +15,26 @@
 int		main(int ac, char **av)
 {
 	int		i;
-	// char	**args;
+	char	**args;
 	t_data	data;
 
 	i = 1;
 	if (ac > 1) {
 		if (ac == 2)
-			ft_putstr("Argument == to 2\n");
-			exit(1);
+			args = ft_strsplit(&av[1][i], ' ');
+		else
+			args = av + 1;
+		if (!error_check(ac, av) || ac == 1)
+		{
+			if (!error_check(ac, av))
+				ft_putstr_fd("Error\n", 2);
+				exit(1);
+		}
 	} else {
 		exit(1);
 	}
-	while (av[i])
-	{
-		if (string_is_nb(av[i]) == -1)
-			return (0);
+	while (args[i])
 		i++;
-	}
-	data.print = 1;
 	make_stacks(&data, av);
 	if (sort_is_ok(&data) == 0)
 	{
