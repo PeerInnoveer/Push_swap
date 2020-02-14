@@ -6,7 +6,7 @@
 /*   By: pvan-ren <pvan-ren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/12 13:34:08 by pvan-ren          #+#    #+#             */
-/*   Updated: 2020/01/31 14:57:21 by pvan-ren         ###   ########.fr       */
+/*   Updated: 2020/02/14 11:18:15 by pvan-ren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,10 @@ int		main(int ac, char **av)
 		ft_putchar('\n');
 		return (0);
 	} else {
-		sort(&data);
+		// else if (len(data->size_a) < certain number, use min_sort)
+		// else if (len(data->size_a) > certain number && < certain number, use mid_sort)
+		// else (use max_sort)
+		sortAlgo(&data);
 		ft_putchar('\n');
 		free(data.stack_a);
 		free(data.stack_b);

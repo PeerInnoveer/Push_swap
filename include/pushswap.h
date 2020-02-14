@@ -6,7 +6,7 @@
 /*   By: pvan-ren <pvan-ren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/12 12:41:32 by pvan-ren          #+#    #+#             */
-/*   Updated: 2020/01/22 12:40:52 by pvan-ren         ###   ########.fr       */
+/*   Updated: 2020/02/14 10:46:13 by pvan-ren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ void			print_tab(t_data *data);
 void			print_name(t_data *data, char *str);
 
 int				sort(t_data *data);
+int				sortAlgo(t_data *data);
 int				sort_is_ok(t_data *data);
 void			sort_b(t_data *data);
 int				sort_is(t_data *data);

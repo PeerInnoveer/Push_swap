@@ -6,7 +6,7 @@
 /*   By: pvan-ren <pvan-ren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/12 13:35:21 by pvan-ren          #+#    #+#             */
-/*   Updated: 2020/01/22 13:39:40 by pvan-ren         ###   ########.fr       */
+/*   Updated: 2020/02/14 11:19:31 by pvan-ren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,6 @@
 
 int		sortAlgo(t_data *data)
 {
-	int		i;
-	int		j;
-
-	i = 0;
-	j = 0;
-
 	while (data->size_a > 1)
 	{
 		if (data->stack_a[0] > data->stack_a[1])
@@ -29,4 +23,19 @@ int		sortAlgo(t_data *data)
 		}
 	}
 	return (0);
+}
+
+int		min_sort(t_data *data)
+{
+	
+}
+
+int		mid_sort(t_data *data)
+{
+	
+}
+
+int		max_sort(t_data *data)
+{
+	
 }
