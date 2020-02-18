@@ -6,7 +6,7 @@
 /*   By: pvan-ren <pvan-ren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/12 12:40:38 by pvan-ren          #+#    #+#             */
-/*   Updated: 2020/01/22 13:39:11 by pvan-ren         ###   ########.fr       */
+/*   Updated: 2020/02/18 13:27:04 by pvan-ren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int		ra(t_data *data)
 	}
 	data->stack_a[data->size_a - 1] = tmp;
 	return (0);
+	print_name(data, "ra\n");
 }
 
 int		rb(t_data *data)
@@ -42,12 +43,14 @@ int		rb(t_data *data)
 	}
 	data->stack_b[data->size_b - 1] = tmp;
 	return (0);
+	print_name(data, "rb\n");
 }
 
 int		rr(t_data *data)
 {
 	ra(data);
 	rb(data);
+	print_name(data, "rr\n");
 	return (0);
 }
 
@@ -64,6 +67,7 @@ int		rra(t_data *data)
 		i--;
 	}
 	data->stack_a[0] = tmp;
+	print_name(data, "rra\n");
 	return (0);
 }
 
@@ -80,6 +84,7 @@ int		rrb(t_data *data)
 		i--;
 	}
 	data->stack_b[0] = tmp;
+	print_name(data, "rrb\n");
 	return (0);
 }
 
@@ -87,6 +92,7 @@ int		rrr(t_data *data)
 {
 	rra(data);
 	rrb(data);
+	print_name(data, "rrr\n");
 	return (0);
 }
 

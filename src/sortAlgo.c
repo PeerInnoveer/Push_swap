@@ -6,29 +6,31 @@
 /*   By: pvan-ren <pvan-ren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/12 13:35:21 by pvan-ren          #+#    #+#             */
-/*   Updated: 2020/02/17 10:05:54 by pvan-ren         ###   ########.fr       */
+/*   Updated: 2020/02/18 16:09:27 by pvan-ren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/pushswap.h"
 
-int		sortAlgo(t_data *data)
+int		min_sort(t_data *data)
 {
-	while (data->size_a > 1)
-	{
-		if (data->stack_a[0] > data->stack_a[1])
-		{
+	if (data->stack_a[0] > data->stack_a[1])
 			sa(data);
-			exit(0);
-		}
-	}
+		if (data->stack_a[1] < data->stack_a[0])
+			sa(data);
+		if (data->stack_a[2] < data->stack_a[1])
+			rra(data);
 	return (0);
 }
 
-// int		min_sort(t_data *data)
-// {
-	
-// }
+int		sortAlgo(t_data *data)
+{
+	if (data->stack_a[0] > data->stack_a[1])
+		sa(data);
+	else if (data->size_a <= 3)
+		min_sort(data);
+		return (0);
+}
 
 // int		mid_sort(t_data *data)
 // {

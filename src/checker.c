@@ -6,7 +6,7 @@
 /*   By: pvan-ren <pvan-ren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/12 15:43:50 by pvan-ren          #+#    #+#             */
-/*   Updated: 2020/02/17 12:47:37 by pvan-ren         ###   ########.fr       */
+/*   Updated: 2020/02/18 13:35:45 by pvan-ren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int		main(int ac, char **av)
 		if (!error_check(ac, av) || ac == 1)
 		{
 			if (!error_check(ac, av))
-				ft_putstr_fd("Error\n", 2);
+				ft_putstr_fd("Error1\n", 2);
 				exit(1);
 		}
 		make_stacks(&data, args);
@@ -60,7 +60,6 @@ int		main(int ac, char **av)
 		else if (ft_strcmp(line, "rrr") == 0)
 			rrr(&data);
 		else
-			ft_putstr("Error\n");
 		i = 0;
 		while (args[i])	{
 			i++;

@@ -6,7 +6,7 @@
 /*   By: pvan-ren <pvan-ren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/12 12:40:04 by pvan-ren          #+#    #+#             */
-/*   Updated: 2020/02/17 12:55:23 by pvan-ren         ###   ########.fr       */
+/*   Updated: 2020/02/18 13:27:21 by pvan-ren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int		pa(t_data *data)
 			i++;
 		}
 	}
+	print_name(data, "pa\n");
 	return (0);
 }
 
@@ -57,5 +58,6 @@ int		pb(t_data *data)
 			i++;
 		}	
 	}
+	print_name(data, "pb\n");
 	return (0);
 }
