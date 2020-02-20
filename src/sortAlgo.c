@@ -6,7 +6,7 @@
 /*   By: pvan-ren <pvan-ren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/12 13:35:21 by pvan-ren          #+#    #+#             */
-/*   Updated: 2020/02/19 12:40:29 by pvan-ren         ###   ########.fr       */
+/*   Updated: 2020/02/20 13:53:07 by pvan-ren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,47 @@
 
 int		min_sort(t_data *data)
 {
-	if (data->stack_a[1] < data->stack_a[0])
+	if (data->stack_a[0] > data->stack_a[1])
 		sa(data);
-	if (data->stack_a[2] < data->stack_a[1])
+	if (data->stack_a[1] > data->stack_a[2])
 		rra(data);
 	return (0);
 }
 
-// int		min2_sort(t_data *data)
-// {
-// 	return (0);
-// }
+int		min2_sort(t_data *data)
+{
+	int i;
+	
+	i = -1;
+	while (data->stack_a[i] != 0)
+	{
+		ft_putstr("You'll get there");
+		ft_putstr("\n");
+		i++;
+	}
+	return (0);
+}
 
-// int		max_sort(t_data *data)
-// {
-// 		return (0);
-// }
+int		max_sort(t_data *data)
+{
+	if (data->stack_a[0] > data->stack_a[1])
+		ft_putstr("Proper sorting: 6 to infinit int's\n");
+	return (0);
+}
 
 int		sortAlgo(t_data *data)
 {
-	if (data->stack_a[0] > data->stack_a[1])
-		sa(data);
+	if (data->size_a == 2)
+	{
+		if (data->stack_a[0] > data->stack_a[1])
+			sa(data);
+	}
 	if (data->size_a == 3)
 		min_sort(data);
-	// if (data->size_a > 3 && data->size_a == 5)
-	// 	min2_sort(data);
+	if (data->size_a > 3 && data->size_a <= 5)
+		min2_sort(data);
+	if (data->size_a > 5)
+		max_sort(data);
 	return (0);
 }
 
