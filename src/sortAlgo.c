@@ -6,7 +6,7 @@
 /*   By: pvan-ren <pvan-ren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/12 13:35:21 by pvan-ren          #+#    #+#             */
-/*   Updated: 2020/02/21 14:21:56 by pvan-ren         ###   ########.fr       */
+/*   Updated: 2020/02/21 15:49:27 by pvan-ren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,18 @@ int		min2_sort(t_data *data)
 	
 	small = data->stack_a[0];
 	i = 1;
-	while (i < data->size_a)
+	while(data->size_a > 3)
 	{
-		if (small > data->stack_a[i])
+		while (i <= data->size_a)
 		{
-			small = data->stack_a[i];
+			if (small > data->stack_a[i])
+				small = data->stack_a[i];
+			i++;
 		}
 		if (small == data->stack_a[0])
+		{
 			pb(data);
+		}
 		else if (small == data->stack_a[1])
 		{
 			sa(data);
@@ -58,10 +62,8 @@ int		min2_sort(t_data *data)
 			rra(data);
 			pb(data);
 		}
-			i++;
 	}
-	// printf("Smallest element in an Array = %d\n", small);
-	return (0);
+		return (0);
 }
 
 int		max_sort(t_data *data)
