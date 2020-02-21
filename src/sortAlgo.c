@@ -6,7 +6,7 @@
 /*   By: pvan-ren <pvan-ren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/12 13:35:21 by pvan-ren          #+#    #+#             */
-/*   Updated: 2020/02/21 15:58:36 by pvan-ren         ###   ########.fr       */
+/*   Updated: 2020/02/21 16:00:28 by pvan-ren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int		min2_sort(t_data *data)
 				small = data->stack_a[i];
 			i++;
 		}
-		while(data->size_a > 3)
+		while(data->size_a > 3) //infinite loop
 		{
 			if (small == data->stack_a[0])
 			{
