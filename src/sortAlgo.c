@@ -6,7 +6,7 @@
 /*   By: pvan-ren <pvan-ren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/12 13:35:21 by pvan-ren          #+#    #+#             */
-/*   Updated: 2020/02/22 19:13:26 by pvan-ren         ###   ########.fr       */
+/*   Updated: 2020/02/22 19:20:59 by pvan-ren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,6 @@ int		sort_three(t_data *data)
 		rra(data);
 		sa(data);
 	}
-	// if (data->stack_a[1] > data->stack_a[2])
-	// {
-	// 	ra(data);
-	// 	sa(data);
-	// 	rra(data);
-	// }
 	return (0);
 }
 
