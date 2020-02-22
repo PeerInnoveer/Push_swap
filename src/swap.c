@@ -6,7 +6,7 @@
 /*   By: pvan-ren <pvan-ren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/12 12:41:06 by pvan-ren          #+#    #+#             */
-/*   Updated: 2020/02/18 13:27:39 by pvan-ren         ###   ########.fr       */
+/*   Updated: 2020/02/22 12:04:59 by pvan-ren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ int		sa(t_data *data)
 {
 	int		tmp;
 
-	if (!data->stack_a[1])
-		return (0);
 	tmp = data->stack_a[0];
 	data->stack_a[0] = data->stack_a[1];
 	data->stack_a[1] = tmp;
@@ -29,8 +27,6 @@ int		sb(t_data *data)
 {
 	int		tmp;
 
-	if (!data->stack_b[1])
-		return (0);
 	tmp = data->stack_b[0];
 	data->stack_b[0] = data->stack_b[1];
 	data->stack_b[1] = tmp;
