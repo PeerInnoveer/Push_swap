@@ -20,7 +20,8 @@ int		main(int ac, char **av)
 	t_data	data;
 
 	i = 0;
-	if (ac > 1) {
+	if (ac > 1)
+	{
 		if (ac == 2)
 			args = ft_strsplit(&av[1][i], ' ');
 		else
@@ -28,12 +29,15 @@ int		main(int ac, char **av)
 		if (!error_check(ac, av) || ac == 1)
 		{
 			if (!error_check(ac, av))
+			{
 				ft_putstr_fd("Error1\n", 2);
 				exit(1);
+			}
 		}
 		make_stacks(&data, args);
 		print_tab(&data);
-	} else 
+	}
+	else 
 		exit(1);
 	while (get_next_line(0, &line) > 0)
 	{
@@ -60,8 +64,9 @@ int		main(int ac, char **av)
 		else if (ft_strcmp(line, "rrr") == 0)
 			rrr(&data);
 		else
-		i = 0;
-		while (args[i])	{
+			i = 0;
+		while (args[i])
+		{
 			i++;
 		}
 			print_tab(&data);
@@ -70,8 +75,10 @@ int		main(int ac, char **av)
 	if (sort_is_ok(&data) == 0)
 		ft_putstr("OK\n");
 	else
+	{
 		ft_putstr("KO\n");
 		free(data.stack_a);
 		free(data.stack_b);
+	}
 	return (0);
 }

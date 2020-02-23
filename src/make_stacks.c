@@ -15,9 +15,6 @@
 
 int		make_stacks(t_data *data, char **av)
 {
-	int	size;
-
-	size = 0;
 	data->i = 0;
 	data->j = 0;
 

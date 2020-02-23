@@ -51,8 +51,10 @@ int		sort_five_four(t_data *data)
 		while (i < data->size_a)
 		{
 			if (small > data->stack_a[i])
+			{
 				small = data->stack_a[i];
 				i++;
+			}
 		}
 		// fprintf(stderr, "small: %d\ndata->stack_a[0]: %d\ndata->stack_a[1]: %d\ndata->stack_a[2]: %d\ndata->stack_a[3]: %d\n", small, data->stack_a[0], data->stack_a[1], data->stack_a[2], data->stack_a[3]);
 		// fflush(stderr);
@@ -72,9 +74,11 @@ int		sort_five_four(t_data *data)
 		if (small == data->stack_a[3])
 		{
 			if (data->size_a == 5)
+			{
 				rra(data);
 			rra(data);
 			pb(data);
+			}
 		}
 		if (small == data->stack_a[4] && data->size_a > 4)
 		{

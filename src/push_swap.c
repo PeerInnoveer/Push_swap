@@ -19,7 +19,8 @@ int		main(int ac, char **av)
 	t_data	data;
 
 	i = 0;
-	if (ac > 1) {
+	if (ac > 1)
+	{
 		if (ac == 2)
 			args = ft_strsplit(&av[1][i], ' ');
 		else
@@ -27,16 +28,18 @@ int		main(int ac, char **av)
 		if (!error_check(ac, av) || ac == 1)
 		{
 			if (!error_check(ac, av))
+			{
 				ft_putstr_fd("Error\n", 2);
 				exit(1);
+			}
 		}
 		make_stacks(&data, args);
-	} else {
+	} else
 		exit(1);
-	}
 	if (sort_is_ok(&data) == 0)
 		return (0);
-	else {
+	else
+	{
 		sortAlgo(&data);
 		free(data.stack_a);
 		free(data.stack_b);
