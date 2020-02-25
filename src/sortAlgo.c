@@ -6,7 +6,7 @@
 /*   By: pvan-ren <pvan-ren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/12 13:35:21 by pvan-ren          #+#    #+#             */
-/*   Updated: 2020/02/22 19:20:59 by pvan-ren         ###   ########.fr       */
+/*   Updated: 2020/02/25 16:12:59 by pvan-ren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,16 +46,12 @@ int		sort_five_four(t_data *data)
 	{
 		small = data->stack_a[0];
 		i = 1;
-		// fprintf(stderr, "size of stack_a: %d\n", data->size_a);
-		// fflush(stderr);
 		while (i < data->size_a)
 		{
 			if (small > data->stack_a[i])
 				small = data->stack_a[i];
 				i++;
 		}
-		// fprintf(stderr, "small: %d\ndata->stack_a[0]: %d\ndata->stack_a[1]: %d\ndata->stack_a[2]: %d\ndata->stack_a[3]: %d\n", small, data->stack_a[0], data->stack_a[1], data->stack_a[2], data->stack_a[3]);
-		// fflush(stderr);
 		if (small == data->stack_a[0])
 			pb(data);
 		if (small == data->stack_a[1])
@@ -82,19 +78,28 @@ int		sort_five_four(t_data *data)
 			pb(data);
 		}
 	}
-	// fprintf(stderr, "\ndata->size_a: %d\n", data->size_a);
-	// fflush(stderr);
 		sort_three(data);
-		sort_b(data);
 		pa(data);
 		pa(data);
 	return (0);
 }
+	
+void	max_sort(t_data *data)
+{
+	int i;
+	int pivot;
 
-// int		max_sort(t_data *data)
-// {
-// 	return (0);
-// }
+	i = 0;
+	while (i < data->size_a)
+	{
+		pivot = data->stack_a[i];
+		if (data->stack_a[i] < pivot)
+			pb(data);
+		i++;
+	}
+	fprintf(stderr, "The value of pivot: %d\n", pivot);
+	fflush(stderr);
+}
 
 int		sortAlgo(t_data *data)
 {
@@ -107,7 +112,7 @@ int		sortAlgo(t_data *data)
 		sort_three(data);
 	if (data->size_a > 3 && data->size_a <= 5)
 		sort_five_four(data);
-	// if (data->size_a > 5)
-	// 	max_sort(data);
+	if (data->size_a > 5)
+		max_sort(data);
 	return (0);
 }
